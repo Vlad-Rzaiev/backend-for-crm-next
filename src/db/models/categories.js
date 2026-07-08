@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-const countriesSchema = new Schema(
+const categoriesSchema = new Schema(
   {
     id: {
       type: String,
@@ -13,10 +13,10 @@ const countriesSchema = new Schema(
     },
   },
   {
-    collection: 'countries',
+    collection: 'categories',
     timestamps: false,
     versionKey: false,
   },
 );
 
-export const CountriesCollection = model('countries', countriesSchema);
+export const CategoriesCollection = model('categories', categoriesSchema);

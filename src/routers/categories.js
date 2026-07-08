@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getCountriesController } from '../controllers/countries.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
+import { getCategoriesController } from '../controllers/categories.js';
 
 const router = Router();
 
-router.get('/countries', ctrlWrapper(getCountriesController));
+router.get('/categories', ctrlWrapper(getCategoriesController));
 
 export default router;

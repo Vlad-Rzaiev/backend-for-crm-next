@@ -1,8 +1,12 @@
 import express from 'express';
-import pino from 'pino';
+import pino from 'pino-http';
 import cors from 'cors';
+import { getEnvVar } from './utils/getEnvVar.js';
+import countriesRouter from './routers/counties.js';
+import { notFoundHandler } from './middlewares/notFoundHandler.js';
+import { errorHandler } from './middlewares/errorHandler.js';
 
-const PORT = process.env.PORT;
+const PORT = Number(getEnvVar('PORT', 7777));
 
 export const startServer = () => {
   const app = express();
@@ -18,24 +22,11 @@ export const startServer = () => {
     }),
   );
 
-  app.get('/', (req, res) => {
-    res.json({
-      message: 'Hello World!',
-    });
-  });
+  app.use(countriesRouter);
 
-  app.use((req, res) => {
-    res.status(404).json({
-      message: 'Not Found!',
-    });
-  });
+  app.use(notFoundHandler);
 
-  app.use((err, req, res, next) => {
-    res.status(500).json({
-      message: 'Something went wrong!',
-      error: err.message,
-    });
-  });
+  app.use(errorHandler);
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

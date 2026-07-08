@@ -1,8 +1,11 @@
 import express from 'express';
 import pino from 'pino';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
-const PORT = process.env.PORT;
+dotenv.config();
+
+const PORT = Number(process.env.PORT);
 
 export const startServer = () => {
   const app = express();

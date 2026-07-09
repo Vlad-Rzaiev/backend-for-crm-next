@@ -6,6 +6,8 @@ export const getAllCompanies = async () => {
 };
 
 export const getCompanyByID = async (companyId) => {
-  const company = await CompaniesCollection.findById(companyId);
+  const company = await CompaniesCollection.findOne({
+    id: companyId,
+  });
   return company;
 };

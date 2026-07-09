@@ -4,6 +4,6 @@ import { getCategoriesController } from '../controllers/categories.js';
 
 const router = Router();
 
-router.get('/categories', ctrlWrapper(getCategoriesController));
+router.get('/api/categories', ctrlWrapper(getCategoriesController));
 
 export default router;

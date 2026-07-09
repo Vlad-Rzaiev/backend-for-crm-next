@@ -4,6 +4,6 @@ import { getSummaryStatsController } from '../controllers/summaryStats.js';
 
 const router = Router();
 
-router.get('/summary-stats', ctrlWrapper(getSummaryStatsController));
+router.get('/api/summary-stats', ctrlWrapper(getSummaryStatsController));
 
 export default router;

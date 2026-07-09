@@ -7,8 +7,8 @@ import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 
 const router = Router();
 
-router.get('/companies', ctrlWrapper(getAllCompaniesController));
+router.get('/api/companies', ctrlWrapper(getAllCompaniesController));
 
-router.get('/companies/:companyId', ctrlWrapper(getCompanyByIdController));
+router.get('/api/companies/:companyId', ctrlWrapper(getCompanyByIdController));
 
 export default router;

@@ -4,6 +4,6 @@ import { getAllSummarySalesController } from '../controllers/summarySales.js';
 
 const router = Router();
 
-router.get('/summary-sales', ctrlWrapper(getAllSummarySalesController));
+router.get('/api/summary-sales', ctrlWrapper(getAllSummarySalesController));
 
 export default router;

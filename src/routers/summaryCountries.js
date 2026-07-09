@@ -4,6 +4,9 @@ import { getAllSummaryCountriesController } from '../controllers/summaryCountrie
 
 const router = Router();
 
-router.get('/summary-countries', ctrlWrapper(getAllSummaryCountriesController));
+router.get(
+  '/api/summary-countries',
+  ctrlWrapper(getAllSummaryCountriesController),
+);
 
 export default router;

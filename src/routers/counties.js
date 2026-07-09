@@ -4,6 +4,6 @@ import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 
 const router = Router();
 
-router.get('/countries', ctrlWrapper(getCountriesController));
+router.get('/api/countries', ctrlWrapper(getCountriesController));
 
 export default router;

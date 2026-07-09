@@ -4,6 +4,6 @@ import { getAllPromotionsController } from '../controllers/promotions.js';
 
 const router = Router();
 
-router.get('/promotions', ctrlWrapper(getAllPromotionsController));
+router.get('/api/promotions', ctrlWrapper(getAllPromotionsController));
 
 export default router;

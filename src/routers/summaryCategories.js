@@ -5,7 +5,7 @@ import { getAllSummaryCategoriesController } from '../controllers/summaryCategor
 const router = Router();
 
 router.get(
-  '/summary-categories',
+  '/api/summary-categories',
   ctrlWrapper(getAllSummaryCategoriesController),
 );
 

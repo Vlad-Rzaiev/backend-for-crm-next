@@ -1,4 +1,4 @@
-import { getAllPromotions } from '../services/promotions.js';
+import { createPromotion, getAllPromotions } from '../services/promotions.js';
 
 export const getAllPromotionsController = async (req, res) => {
   const promotions = await getAllPromotions();
@@ -8,5 +8,16 @@ export const getAllPromotionsController = async (req, res) => {
     success: true,
     message: 'Successfully found promotions!',
     data: promotions,
+  });
+};
+
+export const createPromotionController = async (req, res) => {
+  const promotion = await createPromotion(req.body);
+
+  res.status(201).json({
+    status: 201,
+    success: true,
+    message: 'Successfully created promotion!',
+    data: promotion,
   });
 };
